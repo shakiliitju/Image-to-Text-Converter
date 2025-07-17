@@ -55,6 +55,21 @@ pip install flask pillow opencv-python pytesseract
 ```
 
 ---
+### 4. Install Python Dependencies
+
+Create a `requirements.txt` file with:
+```
+flask
+pillow
+opencv-python
+pytesseract
+```
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+---
 
 ## Usage
 
