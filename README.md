@@ -19,7 +19,7 @@ Built with Flask, OpenCV, Pillow, and pytesseract.
 ### 1. Install Tesseract OCR
 
 **Windows:**  
-Download and install from [UB Mannheim’s Tesseract page](https://github.com/UB-Mannheim/tesseract/wiki) (commonly recommended for Windows users).
+Download and install from [UB Mannheim’s Tesseract page](https://github.com/UB-Mannheim/tesseract/wiki) (commonly recommended for Windows users).<br>
 Default path: `C:\Program Files\Tesseract-OCR`
 
 **Linux (Ubuntu/Debian):**
