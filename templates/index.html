@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image-to-Text</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Image-to-Text Converter</h1>
+    <form id="uploadForm">
+      <input type="file" id="imageInput" name="image" accept="image/*" required />
+      <button type="submit">Extract Text</button>
+    </form>
+
+    <div id="preview">
+      <h3>Image Preview:</h3>
+      <img id="previewImage" src="#" alt="Preview" />
+    </div>
+
+    <div id="output">
+      <h3>Extracted Text:</h3>
+      <pre id="resultText">Your extracted text will appear here...</pre>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
