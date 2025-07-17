@@ -92,6 +92,7 @@ pip install -r requirements.txt
 Image-to-Text-Converter/
 │
 ├── app.py
+├── requirements.txt
 ├── uploads/
 ├── templates/
 │   └── index.html
