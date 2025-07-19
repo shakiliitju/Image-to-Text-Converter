@@ -1,16 +1,17 @@
 # Image-to-Text Converter
 
-A web application for extracting visible text (such as annotations, labels, or patient info) from images using image processing and OCR (Tesseract).  
-Built with Flask, OpenCV, Pillow, and pytesseract.
+A modern web application for extracting visible text from images using advanced OCR (Optical Character Recognition) technology. Built with Flask, OpenCV, Pillow, and Tesseract OCR for accurate text extraction from various image formats.
 
 ---
 
 ## Features
 
-- Upload images (PNG, JPG, etc.)
-- Automatic image preprocessing for better OCR results
-- Extracts and displays text
-- Simple, responsive web interface
+- Upload images in multiple formats (PNG, JPG, JPEG, GIF, BMP, TIFF)
+- Automatic image preprocessing with OpenCV for enhanced OCR accuracy
+- Advanced text extraction using Tesseract OCR
+- Real-time text extraction and display
+- Clean, responsive web interface
+- Cross-platform compatibility (Windows, Linux, macOS)
 
 ---
 
@@ -24,10 +25,11 @@ Default path: `C:\Program Files\Tesseract-OCR`
 
 **Linux (Ubuntu/Debian):**
 ```bash
-sudo apt-get install tesseract-ocr
+sudo apt update
+sudo apt install tesseract-ocr
 ```
 
-**MacOS:**
+**macOS:**
 ```bash
 brew install tesseract
 ```
@@ -45,44 +47,47 @@ Test installation:
 tesseract -v
 ```
 
-### 3. Clone and Install Python Dependencies
+### 3. Clone the Repository and Install Python Dependencies
 
 ```bash
-git clone https://github.com/shakiliitju/Image-to-Text-Converter
-.git
+git clone https://github.com/shakiliitju/Image-to-Text-Converter.git
 cd Image-to-Text-Converter
-pip install flask pillow opencv-python pytesseract
 ```
 
----
 ### 4. Install Python Dependencies
 
-Create a `requirements.txt` file with:
-```
-flask
-pillow
-opencv-python
-pytesseract
-```
-Install dependencies:
+Install dependencies using the included requirements.txt file:
 ```bash
 pip install -r requirements.txt
+```
+
+The requirements.txt includes:
+```
+Flask
+opencv-python
+pytesseract
+Pillow
+numpy
+requests
 ```
 
 ---
 
 ## Usage
 
-1. Make sure Tesseract is installed and the path in `app.py` is correct:
+1. **Configure Tesseract Path**: Make sure Tesseract is installed and the path in `app.py` is correct:
     ```python
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
     ```
-2. Start the Flask server:
+    
+2. **Start the Flask Application**:
     ```bash
     python app.py
     ```
-3. Open your browser at [http://127.0.0.1:5000](http://127.0.0.1:5000)
-4. Upload a image and view the extracted text.
+    
+3. **Access the Application**: Open your web browser and navigate to [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
+4. **Upload and Process**: Select an image file and click upload to extract text from the image.
 
 ---
 
@@ -91,24 +96,58 @@ pip install -r requirements.txt
 ```
 Image-to-Text-Converter/
 │
-├── app.py
-├── requirements.txt
-├── uploads/
-├── templates/
-│   └── index.html
-├── static/
-│   ├── style.css
-│   └── script.js
-└── README.md
+├── app.py                 # Main Flask application
+├── requirements.txt       # Python dependencies
+├── LICENSE               # MIT License file
+├── README.md            # Project documentation
+├── uploads/             # Directory for uploaded images
+├── templates/           # HTML templates
+│   └── index.html      # Main web interface
+└── static/             # Static files (CSS, JS)
+    ├── style.css       # Stylesheet
+    └── script.js       # JavaScript functionality
 ```
+
+---
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Tesseract not found error**:
+   - Ensure Tesseract is properly installed
+   - Verify the path in `app.py` matches your installation
+   - Add Tesseract to your system PATH
+
+2. **Poor OCR results**:
+   - Use high-resolution images with clear text
+   - Ensure good contrast between text and background
+   - Try preprocessing the image manually if needed
+
+3. **Flask server not starting**:
+   - Check if port 5000 is available
+   - Ensure all dependencies are installed
+   - Run `pip install -r requirements.txt` again
 
 ---
 
 ## Notes
 
-- This tool extracts **visible text overlays** from images, not diagnostic scan data.
-- For best results, use images with clear, readable text.
-- For PDF or DICOM support, convert pages to images before uploading.
+- This tool extracts **visible text overlays** from images, not diagnostic scan data
+- For optimal results, use high-resolution images with clear, readable text
+- Supported image formats: PNG, JPG, JPEG, GIF, BMP, TIFF
+- For PDF or DICOM support, convert pages/files to image format before uploading
+- The application automatically preprocesses images using OpenCV for better OCR accuracy
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
